@@ -69,17 +69,17 @@ func init() {
 
 	flag.Usage = func() {
 		fmt.Println(`
- ____ ____ ____ ____ ____ ____ ____ ____ ____ 
-||G |||i |||t |||H |||u |||n |||t |||e |||r ||
-||__|||__|||__|||__|||__|||__|||__|||__|||__||
-|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
+ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____
+||R |||e |||p |||o |||R |||a |||i |||d |||e |||r ||
+||__|||__|||__|||__|||__|||__|||__|||__|||__|||__||
+|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|
 By Misec
 
 A tool to exploit .git folder disclosure vulnerabilities. 
 It identifies, downloads and reconstructs leaked Git repositories.
 
 Usage:
-  githunter [options] <target_url>
+  reporaider [options] <target_url>
 
 Options:
   -workers <n>   Number of concurrent object/pack download workers (default 10).
@@ -96,9 +96,9 @@ Options:
                  for deeper integrity checks.
 
 Examples:
-  githunter -v -workers 5 -o my_repo https://example.com/.git
-  githunter -wordlist ref_names.txt -throttle 100 https://target.com/.git
-  githunter -resume -verifyPack -v https://target.com/.git
+  reporaider -v -workers 5 -o my_repo https://example.com/.git
+  reporaider -wordlist ref_names.txt -throttle 100 https://target.com/.git
+  reporaider -resume -verifyPack -v https://target.com/.git
 
 Disclaimer:
   This tool is for educational purposes only. Unauthorized usage may violate
