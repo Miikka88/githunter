@@ -1,7 +1,7 @@
-# Githunter #
+# RepoRaider #
 
 ## Introduction ##
-Githunter is a tool designed to research .git folder disclosure vulnerabilities.
+RepoRaider is a tool designed to research .git folder disclosure vulnerabilities.
 It identifies, downloads and reconstructs leaked Git repositories by systematically enumerating object directories. Downloading Git objects and pack files. Also reconstructs the repository locally.
 
 ## Features ##
@@ -24,7 +24,7 @@ Ensure that your system meets the following requirements:
 
 **Step 1**
 
-**go mod init githunter**
+**go mod init reporaider**
 
 This will setup the module path and creates a go.mod file.
 
@@ -36,36 +36,36 @@ This downloads the necessary package and updates your go.mod and go.sum files.
 
 **Step3**
 
-**go build githunter.go -o githunter**
+**go build reporaider.go -o reporaider**
 
-This will produce executable named githunter or githunter.exe on windows in current directory.
+This will produce executable named reporaider or reporaider.exe on windows in current directory.
 
 ## Usage ##
 
-Githunter is a commandline tool that needs a target URL pointing to an exposed .git directory.
+RepoRaider is a commandline tool that needs a target URL pointing to an exposed .git directory.
 
 **Basic Usage**
 
-./githunter [options] <target_url>
+./reporaider [options] <target_url>
 
 - <target_url>: The URL of the target website hosting the .git directory (e.g hxxps://example.com/.git)
 
 **Examples**
 1. Basic Enumeration and Download
-./bithunter hxxps://example.com/.git
+./reporaider hxxps://example.com/.git
 
 2. Enable Verbose Output and Specify Worker Count
-./githunter -v -workers 5 hxxps://example.com/.git
+./reporaider -v -workers 5 hxxps://example.com/.git
 
 3. Use a Wordlist for Reference Brute Forsing with Throttling
-./githunter -worlist wordlist.txt -throttle 100 hxxps://example.com/.git
+./reporaider -worlist wordlist.txt -throttle 100 hxxps://example.com/.git
 
 4. Resume Interrupted Downloads and Verify Pack Files
-./githunter -resume -verifyPack -v hxxps://example.com/.git
+./reporaider -resume -verifyPack -v hxxps://example.com/.git
 
 ## Commandline Flags
 
-In Githunter there is various flags to customize its behavior. Below is a list of available options:
+In RepoRaider there is various flags to customize its behavior. Below is a list of available options:
 
 | **Flag**           | **Description**                                                                                                                                                     | **Default**          |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------|
@@ -80,7 +80,7 @@ In Githunter there is various flags to customize its behavior. Below is a list o
 
 ## How It Works
 
-Githunter operates in systematic phases to enumerate, download, verify and reconstruct Git repositories.
+RepoRaider operates in systematic phases to enumerate, download, verify and reconstruct Git repositories.
 
 **1. Enumerate Object Directories**
 - Process: Scans the /objects directory to identify all Git object directories (e.g objects/ab/, objects/cd).
@@ -106,7 +106,7 @@ Githunter operates in systematic phases to enumerate, download, verify and recon
 
 
 ## Ethical and Legal Considerations
-**Githunter** is a tool intended for ethical use in penetration testing, security research, and educational purposes. Unauthorized access or scanning of systems without explicit permission is illegal and unethical. By using this tool, you agree to adhere to the following guidelines:
+**RepoRaider** is a tool intended for ethical use in penetration testing, security research, and educational purposes. Unauthorized access or scanning of systems without explicit permission is illegal and unethical. By using this tool, you agree to adhere to the following guidelines:
 
 1. **Authorization**: Ensure you have explicit permission to scan, test, or assess the target repository. Unauthorized access can lead to legal consequences.
 
